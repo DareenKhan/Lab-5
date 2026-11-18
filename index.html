@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101726">
+  <title>Toronto in Sound | Lab 5: Sound & Vision</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Toronto in Sound home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>TORONTO <b>IN SOUND</b></span>
+    </a>
+    <span class="header-course">CCT360 · LAB 05</span>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="headline">
+      <p class="eyebrow"><span class="dot"></span> DESIGN WITH SOUND & VISION</p>
+      <h1 id="headline">One city.<br><em>Three moods.</em></h1>
+      <p class="intro-copy">A 75-second journey through Toronto — from morning birds to the busy downtown streets and a rainy evening.</p>
+      <div class="intro-meta">
+        <span>01 / MORNING</span><span class="meta-line" aria-hidden="true"></span>
+        <span>02 / AFTERNOON</span><span class="meta-line" aria-hidden="true"></span>
+        <span>03 / EVENING</span>
+      </div>
+    </section>
+
+    <section class="experience" aria-label="Interactive Toronto visualscape">
+      <div class="image-stage" id="stage" data-scene="morning">
+        <img src="assets/images/morning.png" class="scene-image is-active" data-scene="morning" alt="Toronto sunrise skyline with the CN Tower in the morning">
+        <img src="assets/images/afternoon.png" class="scene-image" data-scene="afternoon" alt="Modern red TTC 510 Spadina streetcar travelling through downtown Toronto in the afternoon">
+        <img src="assets/images/evening.png" class="scene-image" data-scene="evening" alt="Rainy Toronto evening intersection with reflections on the street">
+        <div class="scene-shade" aria-hidden="true"></div>
+
+        <div class="stage-top">
+          <span class="stage-chip"><span class="chip-circle"></span> AUDIO VISUALSCAPE</span>
+          <span class="stage-duration">75 SECOND EXPERIENCE</span>
+        </div>
+
+        <div class="stage-bottom" aria-live="polite">
+          <p class="scene-number" id="sceneNumber">SCENE 01 / 03</p>
+          <h2 id="sceneTitle">The city wakes.</h2>
+          <p class="scene-description" id="sceneDescription">Birdsong, fresh air, and a slow start to the morning.</p>
+          <span class="scene-time" id="sceneTime">MORNING · 00:00–00:25</span>
+        </div>
+      </div>
+
+      <div class="sound-panel" aria-label="Soundscape audio controls">
+        <div class="audio-topline"><span>NOW PLAYING <span class="small-dot">•</span> TORONTO IN SOUND</span><span>01:15 TOTAL</span></div>
+        <div class="player-row">
+          <button id="playButton" class="play-button" type="button" aria-label="Play soundscape">▶</button>
+          <div class="player-main">
+            <div class="player-names"><strong>Sound of the city</strong><span id="currentMood">Morning ambience</span></div>
+            <div class="timeline-row">
+              <span id="currentTime">0:00</span>
+              <input id="timeline" type="range" min="0" max="75" step="0.1" value="0" aria-label="Seek through audio">
+              <span id="totalTime">1:15</span>
+            </div>
+          </div>
+          <div class="sound-bars" id="soundBars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <button id="muteButton" class="mute-button" type="button" aria-label="Mute audio" title="Mute / unmute">♫</button>
+        </div>
+        <audio id="soundscape" preload="metadata" src="assets/audio/toronto_soundscape.mp3">
+          Your browser does not support HTML5 audio.
+        </audio>
+        <p class="player-hint">Press play or select a scene below. The visuals change with the audio.</p>
+      </div>
+    </section>
+
+    <section class="scenes-section" aria-labelledby="scenesHeading">
+      <div class="section-heading"><div><p class="eyebrow">EXPLORE THE SOUNDTRACK</p><h2 id="scenesHeading">Choose your scene</h2></div><span>THREE MOMENTS / ONE CITY</span></div>
+      <div class="scene-cards" role="group" aria-label="Jump to a Toronto scene">
+        <button class="scene-card active" data-jump="0" type="button" aria-pressed="true">
+          <img src="assets/images/morning.png" alt="" loading="lazy">
+          <span class="card-info"><span class="card-number">01 <span>0:00–0:25</span></span><strong>Morning</strong><small>Birds · City morning</small></span>
+        </button>
+        <button class="scene-card" data-jump="25" type="button" aria-pressed="false">
+          <img src="assets/images/afternoon.png" alt="" loading="lazy">
+          <span class="card-info"><span class="card-number">02 <span>0:25–0:50</span></span><strong>Afternoon</strong><small>Traffic · City streets</small></span>
+        </button>
+        <button class="scene-card" data-jump="50" type="button" aria-pressed="false">
+          <img src="assets/images/evening.png" alt="" loading="lazy">
+          <span class="card-info"><span class="card-number">03 <span>0:50–1:15</span></span><strong>Evening</strong><small>Rain · Distant traffic</small></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="aboutHeading">
+      <div><p class="eyebrow">ABOUT THE PROJECT</p><h2 id="aboutHeading">Listening to<br>Toronto.</h2></div>
+      <div><p>The soundscape tells a simple story: the city starts slowly, becomes busy, and winds down as the rain begins. The webpage mirrors these changes with animated images and an interactive audio timeline.</p>
+      </div>
+    </section>
+  </main>
+  <footer><span>TORONTO IN SOUND · INTERACTIVE MEDIA LAB</span><span>HTML · CSS · JAVASCRIPT · AUDIO</span></footer>
+</body>
+</html>
